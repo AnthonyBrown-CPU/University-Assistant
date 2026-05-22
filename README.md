@@ -8,6 +8,10 @@ The window is frameless, translucent, and draggable. It lives in the system tray
 
 Tab icons change colour to reflect status: **yellow** for a notice, **red** for an alert.
 
+## Background
+
+This was a first PyQt5 project, chosen after deciding the other Python GUI frameworks weren't feature-rich enough. The weather tab had a memorable bug during development: the wind direction arrow was being rotated by stacking transformation matrices onto the same image object on every update, rather than rotating a stored copy of the original. Memory use climbed until it became obvious something was wrong. The fix was to keep the original pixmap at module level and derive each rotated version from that.
+
 ## Tabs
 
 ### Schedule
